@@ -107,10 +107,10 @@ function draw(){
     let snakeY = snake[0].y;
     
     // which direction
-    if( d == "LEFT") snakeX -= box;
-    if( d == "UP") snakeY -= box;
-    if( d == "RIGHT") snakeX += box;
-    if( d == "DOWN") snakeY += box;
+    if( d == "LEFT") snakeX -= box,d="";
+    if( d == "UP") snakeY -= box,d="";
+    if( d == "RIGHT") snakeX += box,d="";
+    if( d == "DOWN") snakeY += box,d="";
     
     // if the snake eats the food
     if(snakeX == food.x && snakeY == food.y){
@@ -149,7 +149,7 @@ function draw(){
 
 // call draw function every 100 ms
 
-let game = setInterval(draw,100);
+let game = setInterval(draw,300);
 
 
 
