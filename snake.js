@@ -17,14 +17,33 @@ ground.src = "img/ground.png";
 const foodImg = new Image();
 foodImg.src = "img/food.png";
 
+
 // load audio files
 
-let dead = new Audio();
-let eat = new Audio();
-let up = new Audio();
-let right = new Audio();
-let left = new Audio();
-let down = new Audio();
+let dead = new Howl({
+	src: ['audio/dead.mp3'],
+	format: "mp3",
+	})
+let eat = new Howl({
+	src: ['audio/eat.mp3'],
+	format: "mp3",
+	})
+let up = new Howl({
+	src: ['audio/up.mp3'],
+	format: "mp3",
+	})
+let right = new Howl({
+	src: ['audio/right.mp3'],
+	format: "mp3",
+	})
+let left = new Howl({
+	src: ['audio/left.mp3'],
+	format: "mp3",
+	})
+let down = new Howl({
+	src: ['audio/down.mp3'],
+	format: "mp3",
+	})
 
 dead.src = "audio/dead.mp3";
 eat.src = "audio/eat.mp3";
@@ -90,8 +109,34 @@ function collision(head,array){
 
 function draw(){
     
-    ctx.drawImage(ground,0,0);
+    //ctx.drawImage(ground,0,0);
+    ctx.clearRect(0, 0, 19*box, 19*box);
+    ctx.fillStyle = "#FFAFFF";
+    ctx.fillRect(0,0,18*box,18*box);
     
+    ctx.drawImage(foodImg, food.x, food.y);
+    
+    // old head position
+    let snakeX = snake[0].x;
+    let snakeY = snake[0].y;
+    left.pos(snakeX-food.x,snakeY-food.y,0)
+    // which direction
+    if( d == "LEFT") {
+        snakeX -= box,d="";
+    }
+    if( d == "UP"){
+    snakeY -= box,d="";
+    }
+    if( d == "RIGHT"){
+     snakeX += box,d="";
+    }
+    if( d == "DOWN"){
+     snakeY += box,d="";
+    }
+    if(snakeX<box)snakeX=box,dead.play();
+    if(snakeY>17*box)snakeY=17*box,dead.play();
+    if(snakeX>17*box)snakeX=17*box,dead.play();
+    if(snakeY<3*box)snakeY=3*box,dead.play();
     for( let i = 0; i < snake.length ; i++){
         ctx.fillStyle = ( i == 0 )? "green" : "white";
         ctx.fillRect(snake[i].x,snake[i].y,box,box);
@@ -99,19 +144,6 @@ function draw(){
         ctx.strokeStyle = "red";
         ctx.strokeRect(snake[i].x,snake[i].y,box,box);
     }
-    
-    ctx.drawImage(foodImg, food.x, food.y);
-    
-    // old head position
-    let snakeX = snake[0].x;
-    let snakeY = snake[0].y;
-    
-    // which direction
-    if( d == "LEFT") snakeX -= box,d="";
-    if( d == "UP") snakeY -= box,d="";
-    if( d == "RIGHT") snakeX += box,d="";
-    if( d == "DOWN") snakeY += box,d="";
-    
     // if the snake eats the food
     if(snakeX == food.x && snakeY == food.y){
         score++;
@@ -121,6 +153,8 @@ function draw(){
             y : Math.floor(Math.random()*15+3) * box
         }
         // we don't remove the tail
+        //modified to remove tail
+        snake.pop()
     }else{
         // remove the tail
         snake.pop();
@@ -149,7 +183,7 @@ function draw(){
 
 // call draw function every 100 ms
 
-let game = setInterval(draw,300);
+let game = setInterval(draw,25);
 
 
 
