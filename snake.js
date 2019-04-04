@@ -114,7 +114,7 @@ function draw(){
     ctx.fillStyle = "#FFAFFF";
     ctx.fillRect(0,0,18*box,18*box);
     
-    ctx.drawImage(foodImg, food.x, food.y);
+    
     
     // old head position
     let snakeX = snake[0].x;
@@ -151,6 +151,7 @@ function draw(){
     }
     // if the snake eats the food
     if(snakeX == food.x && snakeY == food.y){
+        ctx.drawImage(foodImg, food.x, food.y);
         score++;
         eat.play();
         food = {
