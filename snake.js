@@ -124,6 +124,7 @@ function draw(){
     right.pos(.03*(snake[0].x-food.x),.03*(snake[0].y-food.y),0)
     up.pos(.03*(snake[0].x-food.x),.03*(snake[0].y-food.y),0)
     down.pos(.03*(snake[0].x-food.x),.03*(snake[0].y-food.y),0)
+    dead.pos(.03,.03,0)
     // which direction
     if( d == "LEFT") {
         snakeX -= box,d="";
