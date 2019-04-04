@@ -120,10 +120,10 @@ function draw(){
     let snakeX = snake[0].x;
     let snakeY = snake[0].y;
     //left.pos(5*(snakeX-food.x),5*(snakeY-food.y),0)
-    left.pos(.03*(snake[0].x-food.x),.03*(snake[0].y-food.y),0)
-    right.pos(.03*(snake[0].x-food.x),.03*(snake[0].y-food.y),0)
-    up.pos(.03*(snake[0].x-food.x),.03*(snake[0].y-food.y),0)
-    down.pos(.03*(snake[0].x-food.x),.03*(snake[0].y-food.y),0)
+    left.pos(.04*(snake[0].x-food.x),.04*(snake[0].y-food.y),0)
+    right.pos(.04*(snake[0].x-food.x),.04*(snake[0].y-food.y),0)
+    up.pos(.04*(snake[0].x-food.x),.04*(snake[0].y-food.y),0)
+    down.pos(.04*(snake[0].x-food.x),.04*(snake[0].y-food.y),0)
     dead.pos(.03,.03,0)
     // which direction
     if( d == "LEFT") {
