@@ -120,7 +120,7 @@ function draw(){
     let snakeX = snake[0].x;
     let snakeY = snake[0].y;
     //left.pos(5*(snakeX-food.x),5*(snakeY-food.y),0)
-    left.pos((snake[0].x-food.x),0,0)
+    left.pos(.1(snake[0].x-food.x),0,0)
     // which direction
     if( d == "LEFT") {
         snakeX -= box,d="";
