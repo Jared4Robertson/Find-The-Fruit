@@ -108,7 +108,7 @@ function collision(head,array){
 // draw everything to the canvas
 
 function draw(){
-    
+    fruit.y-=1
     //ctx.drawImage(ground,0,0);
     ctx.clearRect(0, 0, 19*box, 19*box);
     ctx.fillStyle = "#FFAFFF";
@@ -154,10 +154,14 @@ function draw(){
         ctx.drawImage(foodImg, food.x, food.y);
         score++;
         eat.play();
+        // food = {
+        //     x : Math.floor(Math.random()*17+1) * box,
+        //     y : Math.floor(Math.random()*15+3) * box
+        // }
         food = {
-            x : Math.floor(Math.random()*17+1) * box,
-            y : Math.floor(Math.random()*15+3) * box
-        }
+                x : Math.floor(Math.random()*17+1) * box,
+                y : 3 * box
+             }
         // we don't remove the tail
         //modified to remove tail
         snake.pop()
