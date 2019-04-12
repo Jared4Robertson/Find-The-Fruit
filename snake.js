@@ -148,6 +148,7 @@ function draw(){
         ctx.strokeStyle = "red";
         ctx.strokeRect(snake[i].x,snake[i].y,box,box);
     }
+    ctx.drawImage(foodImg, food.x, food.y);
     // if the snake eats the food
     if(snakeX == food.x && snakeY == food.y){
         ctx.drawImage(foodImg, food.x, food.y);
