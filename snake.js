@@ -116,7 +116,7 @@ function draw(){
         right.play()
     }
     if(timer%500==0){
-        drawspeed=drawspeed+1
+        drawspeed=drawspeed/2
     }
     food = {
         x : food.x,
