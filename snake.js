@@ -115,7 +115,7 @@ function draw(){
     if(timer%30==0){
         right.play()
     }
-    if(score%10==0){
+    if(score%5==0){
         drawspeed=drawspeed/2
     }
     food = {
@@ -219,7 +219,7 @@ function draw(){
 
 // call draw function every 100 ms
 
-let game = setInterval(draw,500*drawspeed);
+let game = setInterval(draw,200*drawspeed);
 
 
 
