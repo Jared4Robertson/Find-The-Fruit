@@ -115,7 +115,7 @@ function draw(){
     if(timer%30==0){
         right.play()
     }
-    if(score%5==0){
+    if(timer%500==0){
         drawspeed=drawspeed/2
         clearInterval(game);
         game=setInterval(draw,100*drawspeed);
