@@ -71,6 +71,7 @@ let food = {
 // create the score var
 
 let score = 0;
+let timer=0;
 
 //control the snake
 
@@ -108,6 +109,10 @@ function collision(head,array){
 // draw everything to the canvas
 
 function draw(){
+    timer=timer+1;
+    if(timer%30==0){
+        right.play()
+    }
     food = {
         x : food.x,
         y : food.y+1
@@ -123,7 +128,7 @@ function draw(){
     let snakeX = snake[0].x;
     let snakeY = snake[0].y;
     left.pos(.09*(food.x-snake[0].x),.09*(snake[0].y-food.y),0)
-    right.pos(.04*(snake[0].x-food.x),.04*(snake[0].y-food.y),0)
+    right.pos(.2*(food.x-snake[0].x),.2*(snake[0].y-food.y),0)
     up.pos(.04*(snake[0].x-food.x),.04*(snake[0].y-food.y),0)
     down.pos(.04*(snake[0].x-food.x),.04*(snake[0].y-food.y),0)
     dead.pos(.03,.03,0)
