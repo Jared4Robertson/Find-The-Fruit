@@ -108,7 +108,10 @@ function collision(head,array){
 // draw everything to the canvas
 
 function draw(){
-    fruit.y-=1
+    food = {
+        x : food.x,
+        y : food.y+1
+     }
     //ctx.drawImage(ground,0,0);
     ctx.clearRect(0, 0, 19*box, 19*box);
     ctx.fillStyle = "#FFAFFF";
@@ -137,6 +140,11 @@ function draw(){
     if( d == "DOWN"){
      snakeY += box,d="";
     }
+    if(fruit.y>17*box){score++
+        food = {
+            x : Math.floor(Math.random()*17+1) * box,
+            y : 3 * box
+         }}
     if(snakeX<box)snakeX=box,dead.play();
     if(snakeY>17*box)snakeY=17*box,dead.play();
     if(snakeX>17*box)snakeX=17*box,dead.play();
