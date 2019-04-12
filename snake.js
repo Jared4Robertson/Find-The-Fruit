@@ -140,7 +140,7 @@ function draw(){
     if( d == "DOWN"){
      snakeY += box,d="";
     }
-    if(fruit.y>17*box){score++
+    if(food.y>17*box){score++
         food = {
             x : Math.floor(Math.random()*17+1) * box,
             y : 3 * box
