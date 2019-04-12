@@ -170,7 +170,7 @@ function draw(){
     if(snakeX == food.x&timer%15==0){
         down.play()
     }
-    if(snakeX == food.x && snakeY == food.y){
+    if(snakeX == food.x && d=="UP"){
         ctx.drawImage(foodImg, food.x, food.y);
         score++;
         eat.play();
