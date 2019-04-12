@@ -120,7 +120,7 @@ function draw(){
     let snakeX = snake[0].x;
     let snakeY = snake[0].y;
     //left.pos(5*(snakeX-food.x),5*(snakeY-food.y),0)
-    left.pos(.04*(food.x-snake[0].x),.04*(snake[0].y-food.y),0)
+    left.pos(.07*(food.x-snake[0].x),.07*(snake[0].y-food.y),0)
     right.pos(.04*(snake[0].x-food.x),.04*(snake[0].y-food.y),0)
     up.pos(.04*(snake[0].x-food.x),.04*(snake[0].y-food.y),0)
     down.pos(.04*(snake[0].x-food.x),.04*(snake[0].y-food.y),0)
