@@ -114,8 +114,8 @@ function draw(){
     if(timer%30==0){
         right.play()
     }
-    if(timer%500){
-        drawspeed=+1
+    if(timer%500==0){
+        drawspeed=drawspeed+1
     }
     food = {
         x : food.x,
@@ -131,7 +131,7 @@ function draw(){
     // old head position
     let snakeX = snake[0].x;
     let snakeY = snake[0].y;
-    left.pos(.09*(food.x-snake[0].x),.09*(snake[0].y-food.y),0)
+    left.pos(.09*(food.x-snake[0].x),.13*(snake[0].y-food.y),0)
     right.pos(.2*(food.x-snake[0].x),.2*(snake[0].y-food.y),0)
     up.pos(.04*(snake[0].x-food.x),.04*(snake[0].y-food.y),0)
     down.pos(.04*(snake[0].x-food.x),.04*(snake[0].y-food.y),0)
