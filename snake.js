@@ -58,7 +58,7 @@ let snake = [];
 
 snake[0] = {
     x : 9 * box,
-    y : 10 * box
+    y : 17 * box
 };
 
 // create the food
@@ -143,15 +143,17 @@ function draw(){
     }
     if( d == "UP"){
     shoot=true;    
-    snakeY -= box,d="";
+    //snakeY -= box,
+    d="";
     }
     if( d == "RIGHT"){
      snakeX += box,d="";
     }
     if( d == "DOWN"){
-     snakeY += box,d="";
+    // snakeY += box,
+     d="";
     }
-    if(food.y>17*box){score++
+    if(food.y>17*box){//score++
         food = {
             x : Math.floor(Math.random()*17+1) * box,
             y : 3 * box
