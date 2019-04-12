@@ -72,6 +72,7 @@ let food = {
 
 let score = 0;
 let timer=0;
+let drawspeed=1;
 
 //control the snake
 
@@ -112,6 +113,9 @@ function draw(){
     timer=timer+1;
     if(timer%30==0){
         right.play()
+    }
+    if(timer%500){
+        drawspeed=+1
     }
     food = {
         x : food.x,
@@ -207,7 +211,7 @@ function draw(){
 
 // call draw function every 100 ms
 
-let game = setInterval(draw,25);
+let game = setInterval(draw,25*drawspeed);
 
 
 
