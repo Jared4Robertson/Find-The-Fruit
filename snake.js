@@ -141,7 +141,13 @@ function draw(){
     if(snakeY>17*box)snakeY=17*box,dead.play();
     if(snakeX>17*box)snakeX=17*box,dead.play();
     if(snakeY<3*box)snakeY=3*box,dead.play();
-    
+    for( let i = 0; i < snake.length ; i++){
+        ctx.fillStyle = ( i == 0 )? "green" : "white";
+        ctx.fillRect(snake[i].x,snake[i].y,box,box);
+        
+        ctx.strokeStyle = "red";
+        ctx.strokeRect(snake[i].x,snake[i].y,box,box);
+    }
     // if the snake eats the food
     if(snakeX == food.x && snakeY == food.y){
         ctx.drawImage(foodImg, food.x, food.y);
@@ -153,18 +159,12 @@ function draw(){
         }
         // we don't remove the tail
         //modified to remove tail
-        //snake.pop()
+        snake.pop()
     }else{
         // remove the tail
         snake.pop();
     }
-    for( let i = 0; i < snake.length ; i++){
-        ctx.fillStyle = ( i == 0 )? "green" : "white";
-        ctx.fillRect(snake[i].x,snake[i].y,box,box);
-        
-        ctx.strokeStyle = "red";
-        ctx.strokeRect(snake[i].x,snake[i].y,box,box);
-    }
+    
     
     // add new Head
     
