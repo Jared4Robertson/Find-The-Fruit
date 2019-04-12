@@ -174,7 +174,7 @@ function draw(){
     }
     ctx.drawImage(foodImg, food.x, food.y);
     // if the snake eats the food
-    if(snakeX == food.x&timer%15==0){
+    if(snakeX == food.x&timer%7==0){
         down.play()
     }
     if(snakeX == food.x && shoot){
