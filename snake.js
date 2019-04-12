@@ -160,7 +160,7 @@ function draw(){
         }
         // we don't remove the tail
         //modified to remove tail
-        snake.pop()
+        //snake.pop()
     }else{
         // remove the tail
         snake.pop();
