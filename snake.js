@@ -73,6 +73,7 @@ let food = {
 let score = 0;
 let timer=0;
 let drawspeed=1;
+let shoot=false;
 
 //control the snake
 
@@ -141,6 +142,7 @@ function draw(){
         snakeX -= box,d="";
     }
     if( d == "UP"){
+    shoot=true;    
     snakeY -= box,d="";
     }
     if( d == "RIGHT"){
@@ -170,8 +172,9 @@ function draw(){
     if(snakeX == food.x&timer%15==0){
         down.play()
     }
-    if(snakeX == food.x && d=="UP"){
+    if(snakeX == food.x && shoot){
         ctx.drawImage(foodImg, food.x, food.y);
+        shoot=false;
         score++;
         eat.play();
         // food = {
