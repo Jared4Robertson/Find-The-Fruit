@@ -84,17 +84,17 @@ document.addEventListener("keydown",direction);
 function direction(event){
     let key = event.keyCode;
     if( key == 37 && d != "RIGHT"){
-        left.play();
+       // left.play();
         d = "LEFT";
     }else if(key == 38 && d != "DOWN"){
         d = "UP";
-        left.play();
+       // left.play();
     }else if(key == 39 && d != "LEFT"){
         d = "RIGHT";
-        left.play();
+        //left.play();
     }else if(key == 40 && d != "UP"){
         d = "DOWN";
-        left.play();
+        //left.play();
     }
 }
 
@@ -136,7 +136,14 @@ function draw(){
     let snakeX = snake[0].x;
     let snakeY = snake[0].y;
     left.pos(.09*(food.x-snake[0].x),.13*(snake[0].y-food.y),0)
-    right.pos(.2*(food.x-snake[0].x),.2*(snake[0].y-food.y),0)
+
+    if(food.x-snake[0]>0){
+      right.pos(.5,.0*(snake[0].y-food.y),0)  
+    }
+    if(food.x-snake[0]<0){
+        right.pos(-.5,.0*(snake[0].y-food.y),0)  
+      }
+    
     up.pos(.04*(snake[0].x-food.x),.04*(snake[0].y-food.y),0)
     down.pos(.04*(snake[0].x-food.x),.04*(snake[0].y-food.y),0)
     dead.pos(.03,.03,0)
