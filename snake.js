@@ -137,10 +137,10 @@ function draw(){
     let snakeY = snake[0].y;
     left.pos(.09*(food.x-snake[0].x),.13*(snake[0].y-food.y),0)
 
-    if(food.x-snake[0]>0){
+    if(food.x-snake[0].x>0){
       right.pos(1,.0*(snake[0].y-food.y),0)  
     }
-    if(food.x-snake[0]<0){
+    if(food.x-snake[0].x<0){
         right.pos(-1,.0*(snake[0].y-food.y),0)  
       }
     
