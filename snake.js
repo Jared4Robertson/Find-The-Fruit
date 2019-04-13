@@ -94,13 +94,14 @@ function direction(event){
     }else if(key == 39 && d != "LEFT"){
         d = "RIGHT";
         //left.play();
-    }else if(key == 40 && d != "UP"){
+    }else if(key == 40 && d != "UP"&&e!="start"){
         d = "DOWN";
         e="start";
         check();
         //left.play();
     }else if(key == 32){
         d = "SPACE";
+        check();
         //left.play();
     }
     
@@ -191,7 +192,7 @@ function draw(){
     ctx.drawImage(foodImg, food.x, food.y);
     // if the snake eats the food
     if(snakeX == food.x&timer%7==0){
-        down.play()
+        up.play()
     }
     if(snakeX == food.x && shoot){
         ctx.drawImage(foodImg, food.x, food.y);
@@ -242,8 +243,13 @@ if(e=="start"){
 }
 function check(){
     if(e=="start"){
+        e=""
         let game = setInterval(draw,50*drawspeed); 
      }
+     if(d="SPACE"){
+
+     }
+
 }
 
 
