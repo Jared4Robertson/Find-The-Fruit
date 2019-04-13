@@ -95,7 +95,11 @@ function direction(event){
     }else if(key == 40 && d != "UP"){
         d = "DOWN";
         //left.play();
+    }else if(key == 32){
+        d = "SPACE";
+        //left.play();
     }
+    
 }
 
 // cheack collision function
@@ -229,8 +233,10 @@ function draw(){
 }
 
 // call draw function every 100 ms
+if(d=="SPACE"){
+   let game = setInterval(draw,50*drawspeed); 
+}
 
-let game = setInterval(draw,50*drawspeed);
 
 
 
