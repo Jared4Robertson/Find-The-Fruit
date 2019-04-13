@@ -112,8 +112,9 @@ function collision(head,array){
 
 function draw(){
     timer=timer+1;
-    if(timer%30==0){
+    if(timer%15==0&&food.x-snake[0].x!=0){
         right.play()
+
     }
     if(timer%500==0){
         drawspeed=drawspeed/1.1
