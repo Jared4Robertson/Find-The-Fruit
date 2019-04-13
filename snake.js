@@ -154,7 +154,7 @@ function draw(){
         right.pos(-1,.0*(snake[0].y-food.y),0)  
       }
     
-    up.pos(.04*(snake[0].x-food.x),.04*(snake[0].y-food.y),0)
+    up.pos(.04*(snake[0].x-food.x),0,0)
     down.pos(.04*(snake[0].x-food.x),.04*(snake[0].y-food.y),0)
     dead.pos(.03,.03,0)
     // which direction
