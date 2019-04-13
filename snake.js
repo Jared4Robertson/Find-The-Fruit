@@ -138,10 +138,10 @@ function draw(){
     left.pos(.09*(food.x-snake[0].x),.13*(snake[0].y-food.y),0)
 
     if(food.x-snake[0]>0){
-      right.pos(.5,.0*(snake[0].y-food.y),0)  
+      right.pos(1,.0*(snake[0].y-food.y),0)  
     }
     if(food.x-snake[0]<0){
-        right.pos(-.5,.0*(snake[0].y-food.y),0)  
+        right.pos(-1,.0*(snake[0].y-food.y),0)  
       }
     
     up.pos(.04*(snake[0].x-food.x),.04*(snake[0].y-food.y),0)
