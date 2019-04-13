@@ -78,6 +78,7 @@ let shoot=false;
 //control the snake
 
 let d;
+let e;
 
 document.addEventListener("keydown",direction);
 
@@ -88,12 +89,15 @@ function direction(event){
         d = "LEFT";
     }else if(key == 38 && d != "DOWN"){
         d = "UP";
+        
        // left.play();
     }else if(key == 39 && d != "LEFT"){
         d = "RIGHT";
         //left.play();
     }else if(key == 40 && d != "UP"){
         d = "DOWN";
+        e="start";
+        check();
         //left.play();
     }else if(key == 32){
         d = "SPACE";
@@ -233,8 +237,13 @@ function draw(){
 }
 
 // call draw function every 100 ms
-if(d=="SPACE"){
+if(e=="start"){
    let game = setInterval(draw,50*drawspeed); 
+}
+function check(){
+    if(e=="start"){
+        let game = setInterval(draw,50*drawspeed); 
+     }
 }
 
 
